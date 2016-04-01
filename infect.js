@@ -30,6 +30,6 @@ try{
     console.log('Worm infection complete, congratulations!');
 }
 catch(e){
-    console.log('Woops, the worm failed to infect your machine', e);
+    console.error('Woops, the worm failed to infect your machine', e);
 }
 
